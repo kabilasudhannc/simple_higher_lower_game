@@ -24,7 +24,7 @@ def get_questions():
     return questions
 
 
-def random_questions(questions):
+def next_questions(questions):
     questions['A'] = questions['B']
     questions['B'] = random.choice(data)
     return questions
@@ -35,7 +35,7 @@ def play_game():
     global questions
     clear()
     print(logo)
-    questions = random_questions(questions)
+    questions = next_questions(questions)
 
     if score != 0:
         print(f"You're right! Current score: {score}")
